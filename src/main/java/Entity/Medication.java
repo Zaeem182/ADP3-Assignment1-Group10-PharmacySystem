@@ -74,7 +74,7 @@ public class Medication {
         }
 
     }
-
+//
 //    public static void main(String[] args){
 //        Medication medication = new Builder().medName("Allegex").medAmount(5).build();
 //        System.out.print(medication.getMedName() +" "+ medication.getMedAmount());
