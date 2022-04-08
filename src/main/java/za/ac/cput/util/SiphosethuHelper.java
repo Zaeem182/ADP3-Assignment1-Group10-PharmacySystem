@@ -3,9 +3,9 @@
 //        *  Student Number: 217237614
 //        *  Group: 10
 //        *
-//        */
+//     */
 
-package Util;
+package za.ac.cput.util;
 
 import java.util.UUID;
 

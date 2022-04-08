@@ -5,11 +5,13 @@
  *
  */
 
-package Entity;
+package za.ac.cput.entity;
 
 public class JobTitle {
 
-    private int employeeID, secretaryID, doctorID;
+    private String employeeID;
+    private static String secretaryID;
+    private String doctorID;
 
     private JobTitle(Builder builder) {
         this.employeeID=builder.employeeID;
@@ -17,33 +19,33 @@ public class JobTitle {
         this.doctorID = builder.doctorID;
     }
 
-    public int getEmployeeID() {
+    public String getEmployeeID() {
         return employeeID;
     }
-    public int getSecretaryID() {
+    public static String getSecretaryID() {
         return secretaryID;
     }
-    public int getDoctorID() {
+    public String getDoctorID() {
         return doctorID;
     }
 
     public static class Builder {
-        private int employeeID;
-        private int secretaryID;
-        private int doctorID;
+        private String employeeID;
+        private String secretaryID;
+        private String doctorID;
 
 
-        public Builder setEmployeeID(int employeeID) {
+        public Builder setEmployeeID(String employeeID) {
             this.employeeID = employeeID;
             return this;
         }
 
-        public Builder setSecretaryID(int SecretaryID) {
+        public Builder setSecretaryID(String SecretaryID) {
             this.secretaryID = secretaryID;
             return this;
         }
 
-        public Builder setDoctorID(int doctorID) {
+        public Builder setDoctorID(String doctorID) {
             this.doctorID = doctorID;
             return this;
         }
@@ -60,7 +62,6 @@ public class JobTitle {
             return this;
         }
     }
-
 
     @Override
     public String toString() {

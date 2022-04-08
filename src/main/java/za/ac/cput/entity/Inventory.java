@@ -2,14 +2,14 @@
  * Author: Siphosethu Feni
  * Inventory.java
  */
-package Entity;
+package za.ac.cput.entity;
 
 public class Inventory {
-    private int inventoryID, tableStockAmount, medicineStockAmount;
-    private String medicationID;
+    private int tableStockAmount, medicineStockAmount;
+    private String inventoryID, medicationID;
 
 
-    public Inventory(int inventoryID, String medicationID, int tableStockAmount, int medicineStockAmount) {
+    public Inventory(String inventoryID, String medicationID, int tableStockAmount, int medicineStockAmount) {
         this.inventoryID = inventoryID;
         this.medicationID = medicationID;
         this.tableStockAmount = tableStockAmount;
@@ -25,7 +25,7 @@ public class Inventory {
 
     }
 
-    public int getInventoryID() {
+    public String getInventoryID() {
         return inventoryID;
     }
 
@@ -44,11 +44,11 @@ public class Inventory {
 
     public static class Builder {
 
-        private int inventoryID, tableStockAmount, medicineStockAmount;
-        private String medicationID;
+        private int  tableStockAmount, medicineStockAmount;
+        private String inventoryID, medicationID;
 
 
-        public Builder setInventory(int inventoryID) {
+        public Builder setInventoryID(String inventoryID) {
             this.inventoryID = inventoryID;
             return this;
         }
@@ -63,7 +63,7 @@ public class Inventory {
             return this;
         }
 
-        public Builder setMedicineStockAmount(String MedicineStockAmount) {
+        public Builder setMedicineStockAmount(int MedicineStockAmount) {
             this.medicineStockAmount = medicineStockAmount;
             return this;
         }

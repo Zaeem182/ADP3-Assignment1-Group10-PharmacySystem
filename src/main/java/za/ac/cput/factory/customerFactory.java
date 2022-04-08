@@ -1,4 +1,4 @@
-package Factory;
+package za.ac.cput.factory;
 
 public class customerFactory {
 }
