@@ -2,7 +2,7 @@ package Entity;
 /*Supplier.java
 Entity for the Supplier
 Author : Ilyaas Davids (219466424)
-Date : 10 April 2022*/
+Date : 7 August 2022*/
 public class Supplier {
     private String suppId;
     private String suppName;
