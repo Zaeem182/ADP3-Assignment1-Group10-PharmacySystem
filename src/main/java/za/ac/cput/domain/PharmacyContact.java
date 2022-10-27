@@ -16,23 +16,20 @@ import java.util.Objects;
 @Entity
 public class PharmacyContact implements Serializable {
 
-    @NotNull
     @Id
     private String  pharmId;
-    @NotNull
-    @Embedded
-    private Contact contact;
 
-    public Contact getContact()
-    {
-        return contact;
-    }
+    @Embedded
+    private String contactNumber;
+    private String email;
+
 
     protected PharmacyContact() {}
 
     PharmacyContact(Builder builder){
         this.pharmId = builder.pharmId;
-        this.contact = builder.contact;
+        this.contactNumber = builder.contactNumber;
+        this.email = builder.email;
     }
 
     public String getPharmId() {
@@ -44,40 +41,48 @@ public class PharmacyContact implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PharmacyContact that = (PharmacyContact) o;
-        return pharmId.equals(that.pharmId) && contact.equals(that.contact);
+        return pharmId.equals(that.pharmId) && contactNumber.equals(that.contactNumber) && email.equals(that.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pharmId, contact);
+        return Objects.hash(pharmId, contactNumber,email);
     }
 
     @Override
     public String toString() {
         return "PharmacyContact{" +
                 "pharmId='" + pharmId + '\'' +
-                ", contact=" + contact +
+                ", contactNumber='" + contactNumber + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 
     public static class Builder {
         private String pharmId;
-        private Contact contact;
+        private String contactNumber;
+        private String email;
 
-        public PharmacyContact.Builder setPharmId(String pharmId) {
+        public Builder pharmId(String pharmId) {
             this.pharmId = pharmId;
             return this;
         }
 
-        public PharmacyContact.Builder setContact(Contact contact){
-            this.contact = contact;
+        public Builder contactNumber(String contactNumber){
+            this.contactNumber = contactNumber;
+            return this;
+        }
+
+        public Builder email(String email){
+            this.email = email;
             return this;
         }
 
 
-        public PharmacyContact.Builder copy(PharmacyContact pharmacyContact) {
+        public Builder copy(PharmacyContact pharmacyContact) {
             this.pharmId = pharmacyContact.pharmId;
-            this.contact = pharmacyContact.contact;
+            this.contactNumber = pharmacyContact.contactNumber;
+            this.email = pharmacyContact.email;
             return this;
         }
 

@@ -16,19 +16,15 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PharmacyContactFactoryTest {
     @Test
-    @Order(1)
-    public void buildWithError(){
-        Exception exception = Assertions.assertThrows(IllegalArgumentException.class,()->
-                PharmacyContactFactory.build("123","0208348302","216040566@mycput.ac.za"));
-        String exceptionMessage = exception.getMessage();
-        System.out.println(exceptionMessage);
+    void testCreatePharmacyContact() {
+        PharmacyContact pharmacyContact = PharmacyContactFactory.build("123", "0564236655", "waseem@gmail.com");
+        Assertions.assertNotNull(pharmacyContact);
+        System.out.println(pharmacyContact);
     }
 
-
     @Test
-    @Order(2)
-    public void buildWithSucess(){
-        PharmacyContact pharmacyContact = PharmacyContactFactory.build("123", "0208348302","216040566@mycput.ac.za");
+    void testCreatePharmacyContactWithError() {
+        PharmacyContact pharmacyContact = PharmacyContactFactory.build("123", "0564236655", "waseem@gmail.com");
         Assertions.assertNotNull(pharmacyContact);
         System.out.println(pharmacyContact);
     }
