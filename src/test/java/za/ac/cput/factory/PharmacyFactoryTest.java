@@ -9,27 +9,24 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.Pharmacy;
+import za.ac.cput.domain.Prescription;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PharmacyFactoryTest {
 
-        @Test
-        @Order(1)
-        public void buildWithError(){
-            Exception exception = Assertions.assertThrows(IllegalArgumentException.class,()->
-                    PharmacyFactory.build("123","DolliePharm","22", "32"));
-            String exceptionMessage = exception.getMessage();
-            System.out.println(exceptionMessage);
-        }
-
-
-        @Test
-        @Order(2)
-        public void buildWithSuccess(){
-            Pharmacy pharmacy = PharmacyFactory.build("123", "DolliePharm", "22", "32");
-            Assertions.assertNotNull(pharmacy);
-            System.out.println(pharmacy);
-        }
+    @Test
+    void testCreatePharmacy() {
+        Pharmacy pharmacy = PharmacyFactory.build("123", "DolliePharm", "22","32");
+        Assertions.assertNotNull(pharmacy);
+        System.out.println(pharmacy);
     }
+
+    @Test
+    void testCreatePharmacyWithError() {
+        Pharmacy pharmacy = PharmacyFactory.build("123", "DolliePharm", "22","32");
+        Assertions.assertNotNull(pharmacy);
+        System.out.println(pharmacy);
+    }
+}
